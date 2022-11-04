@@ -5,4 +5,7 @@ sudo snap install docker &&
 sudo snap install htop &&
 sudo snap install youtube-dl &&
 sudo snap install gradle --classic &&
-sudo snap install intellij-idea-community --classic
+sudo snap install intellij-idea-community --classic &&
+sudo apt-get install -y git &&
+sudo apt-get install -y install openjdk-17-jdk &&
+sudo apt-get install -y install maven 
