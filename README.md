@@ -49,7 +49,7 @@ main() {
     sudo snap install gradle --classic
     sudo snap install intellij-idea-community --classic
     snap install node --classic
-    sudo apt-get install -y git openjdk-17-jdk maven
+    sudo apt-get install -y git openjdk-17-jdk maven curl
 
 }
 main
