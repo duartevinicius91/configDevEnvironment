@@ -50,6 +50,11 @@ main() {
     sudo snap install intellij-idea-community --classic
     sudo snap install node --classic
     sudo apt-get install -y git openjdk-17-jdk maven curl
+    sudo addgroup --system docker
+    sudo adduser $USER docker
+    newgrp docker
+    sudo snap disable docker
+    sudo snap enable docke
 
 }
 main
