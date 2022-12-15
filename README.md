@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#bash <(wget -qO- http://mywebsite.example/myscript.txt)
+#bash <(wget -qO- https://raw.githubusercontent.com/duartevinicius91/configDevEnvironment/main/README.md)
 set -euo pipefail
 
 # Disables Ubuntu shortcuts that clash with IntelliJ Idea (and probably other
@@ -57,6 +57,6 @@ main() {
     newgrp docker
     sudo snap disable docker
     sudo snap enable docker
-
+    sudo snap refresh
 }
 main
