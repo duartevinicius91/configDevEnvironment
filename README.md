@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#bash <(wget -qO- http://mywebsite.example/myscript.txt)
 set -euo pipefail
 
 # Disables Ubuntu shortcuts that clash with IntelliJ Idea (and probably other
@@ -54,7 +56,7 @@ main() {
     sudo adduser $USER docker
     newgrp docker
     sudo snap disable docker
-    sudo snap enable docke
+    sudo snap enable docker
 
 }
 main
