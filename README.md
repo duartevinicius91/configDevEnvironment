@@ -43,11 +43,7 @@ main() {
         dconf write "$key" "$DISABLED_VALUE"
     done
     # configDevEnvironment
-    sudo snap install spotify
-    sudo snap install vlc
-    sudo snap install docker
-    sudo snap install htop
-    sudo snap install youtube-dl
+    sudo snap install spotify vlc docker htop youtube-dl
     sudo snap install gradle --classic
     sudo snap install intellij-idea-community --classic
     sudo snap install node --classic
@@ -57,6 +53,8 @@ main() {
     newgrp docker
     sudo snap disable docker
     sudo snap enable docker
+    wget https://download.virtualbox.org/virtualbox/7.0.6/virtualbox-7.0_7.0.6-155176~Ubuntu~jammy_amd64.deb
+    sudo apt --fix-broken -y install ./virtualbox-7.0_7.0.6-155176_Ubuntu_jammy_amd64.deb
     sudo snap refresh
 }
 main
