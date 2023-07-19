@@ -46,7 +46,7 @@ main() {
     sudo snap install spotify vlc docker htop youtube-dl mysql-workbench-community
     sudo snap install intellij-idea-community --classic
     sudo snap install node --classic
-    sudo apt-get install -y git openjdk-17-jdk curl
+    sudo apt-get install -y git curl
     sudo addgroup --system docker
     sudo adduser $USER docker
     newgrp docker
@@ -55,7 +55,7 @@ main() {
     mkdir ~/tools && cd ~/tools
     wget https://dlcdn.apache.org/maven/maven-3/3.9.3/binaries/apache-maven-3.9.3-bin.tar.gz
     wget https://downloads.gradle.org/distributions/gradle-8.2.1-bin.zip
-    wget https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_x64_alpine-linux_hotspot_17.0.7_7.tar.gz
+    wget https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz
     tar -xvf OpenJDK17U-jdk_x64_alpine-linux_hotspot_17.0.7_7.tar.gz
     tar -xvf apache-maven-3.9.3-bin.tar.gz
     unzip gradle-8.2.1-bin.zip
