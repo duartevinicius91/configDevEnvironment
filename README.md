@@ -44,7 +44,6 @@ main() {
     done
     # configDevEnvironment
     sudo snap install spotify vlc docker htop youtube-dl mysql-workbench-community
-    sudo snap install gradle --classic
     sudo snap install intellij-idea-community --classic
     sudo snap install node --classic
     sudo apt-get install -y git openjdk-17-jdk curl
