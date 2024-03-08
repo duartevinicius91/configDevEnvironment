@@ -46,7 +46,7 @@ main() {
     sh <(wget -qO- https://get.docker.com)
     
     # configDevEnvironment
-    sudo snap install spotify vlc htop youtube-dl mysql-workbench-community
+    sudo snap install spotify vlc htop youtube-dl postman
     sudo snap install intellij-idea-community --classic
     sudo snap install node --classic
     sudo snap refresh
