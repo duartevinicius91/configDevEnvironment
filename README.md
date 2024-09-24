@@ -49,6 +49,11 @@ main() {
     sudo snap install spotify vlc htop youtube-dl postman
     sudo snap install intellij-idea-community --classic
     sudo snap install node --classic
+    sudo apt remove displaylink-driver
+    sudo apt remove evdi
+    sudo modprobe -r evdi
+
+    
     sudo snap refresh
 }
 main
