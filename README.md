@@ -30,6 +30,7 @@ readonly DISABLED_VALUE="['disabled']"
 main() {
     sudo apt-get update -y
     sudo apt-get upgrade -y
+    sudo apt-get install -y curl ca-certificates
     # Make backup
     printf "#!/bin/bash\n" >>  "$BACKUP_FILE"
     for key in "${KEYS[@]}"; do
@@ -52,8 +53,24 @@ main() {
     sudo apt remove displaylink-driver
     sudo apt remove evdi
     sudo modprobe -r evdi
-
-    
+   
     sudo snap refresh
+}
+baixar_certificado() {
+    local url=$1
+    local porta=${2:-443}  # Usa 443 como porta padrão
+
+    # Extrai o nome do servidor a partir da URL
+    local nome_servidor=$(echo $url | awk -F/ '{print $3}')
+
+    # Baixa o certificado e salva no diretório de certificados
+    openssl s_client -showcerts -verify 5 -connect ${nome_servidor}:${porta} < /dev/null |
+    awk '/BEGIN CERTIFICATE/,/END CERTIFICATE/{ if(/BEGIN CERTIFICATE/){a++}; out="cert"a".crt"; print >out}'
+    mv *.crt /usr/local/share/ca-certificates
+
+    # Atualiza os certificados do sistema
+    update-ca-certificates
+
+    rm /usr/local/share/ca-certificates/*.crt
 }
 main
