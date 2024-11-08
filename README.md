@@ -44,15 +44,24 @@ main() {
         dconf write "$key" "$DISABLED_VALUE"
     done
 
+
+    sudo apt remove displaylink-driver
+    sudo apt remove evdi
+    sudo modprobe -r evdi
+    wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
+    sudo apt install -y ./synaptics-repository-keyring.deb 
+    sudo apt update
+    sudo apt install displaylink-driver
+    
+    sudo dpkg -i synaptics-repository-keyring.deb
+    sudo dpkg -i synaptics-repository-keyring.deb
     sh <(wget -qO- https://get.docker.com)
     
     # configDevEnvironment
     sudo snap install spotify vlc htop youtube-dl postman
     sudo snap install intellij-idea-community --classic
     sudo snap install node --classic
-    sudo apt remove displaylink-driver
-    sudo apt remove evdi
-    sudo modprobe -r evdi
+
    
     sudo snap refresh
 }
