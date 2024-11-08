@@ -32,18 +32,17 @@ main() {
     sudo apt-get upgrade -y
     sudo apt-get install -y curl ca-certificates
     # Make backup
-    printf "#!/bin/bash\n" >>  "$BACKUP_FILE"
-    for key in "${KEYS[@]}"; do
-        local value
-        value=$(dconf read "$key")
-        printf "dconf write \"%s\" \"%s\"\n" "$key" "$value" >> "$BACKUP_FILE"
-    done
+    #printf "#!/bin/bash\n" >>  "$BACKUP_FILE"
+    #for key in "${KEYS[@]}"; do
+    #    local value
+    #    value=$(dconf read "$key")
+    #    printf "dconf write \"%s\" \"%s\"\n" "$key" "$value" >> "$BACKUP_FILE"
+    #done
 
     # Disable all Ubuntu shortcuts
-    for key in "${KEYS[@]}"; do
-        dconf write "$key" "$DISABLED_VALUE"
-    done
-
+    #for key in "${KEYS[@]}"; do
+    #    dconf write "$key" "$DISABLED_VALUE"
+    #done
 
     sudo apt remove displaylink-driver
     sudo apt remove evdi
@@ -53,14 +52,12 @@ main() {
     sudo apt update
     sudo apt install -y displaylink-driver
     
-    sudo dpkg -i synaptics-repository-keyring.deb
     sh <(wget -qO- https://get.docker.com)
     
     # configDevEnvironment
     sudo snap install spotify vlc htop youtube-dl postman
     sudo snap install intellij-idea-community --classic
     sudo snap install node --classic
-
    
     sudo snap refresh
 }
