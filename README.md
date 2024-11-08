@@ -50,8 +50,8 @@ main() {
     wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
     sudo apt install -y ./synaptics-repository-keyring.deb 
     sudo apt update
+    sudo apt install -y evdi-dkms
     sudo apt install -y displaylink-driver
-    
     sh <(wget -qO- https://get.docker.com)
     
     # configDevEnvironment
