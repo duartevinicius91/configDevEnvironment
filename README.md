@@ -51,9 +51,8 @@ main() {
     wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
     sudo apt install -y ./synaptics-repository-keyring.deb 
     sudo apt update
-    sudo apt install displaylink-driver
+    sudo apt install -y displaylink-driver
     
-    sudo dpkg -i synaptics-repository-keyring.deb
     sudo dpkg -i synaptics-repository-keyring.deb
     sh <(wget -qO- https://get.docker.com)
     
