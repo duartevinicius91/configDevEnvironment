@@ -49,13 +49,11 @@ main() {
     sudo modprobe -r evdi
     wget https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
     sudo apt install -y ./synaptics-repository-keyring.deb 
-    sudo apt update
-    sudo apt install -y evdi-dkms
-    sudo apt install -y displaylink-driver
+    sudo apt update && sudo apt install -y evdi-dkms displaylink-driver
     sh <(wget -qO- https://get.docker.com)
     
     # configDevEnvironment
-    sudo snap install spotify vlc htop youtube-dl postman
+    sudo snap install spotify vlc htop youtube-dl postman dbeaver-ce
     sudo snap install intellij-idea-community --classic
     sudo snap install node --classic
    
