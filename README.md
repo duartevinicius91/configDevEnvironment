@@ -76,4 +76,5 @@ baixar_certificado() {
 
     rm /usr/local/share/ca-certificates/*.crt
 }
+#keytool.exe -printcert -sslserver $1 -rfc | keytool -import -noprompt -cacerts -storepass changeit -trustcacerts -alias $1
 main
