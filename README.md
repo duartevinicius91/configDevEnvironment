@@ -51,12 +51,15 @@ main() {
     sudo apt install -y ./synaptics-repository-keyring.deb 
     sudo apt update && sudo apt install -y evdi-dkms displaylink-driver
     sh <(wget -qO- https://get.docker.com)
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    newgrp docker
     
     # configDevEnvironment
     sudo snap install spotify vlc htop youtube-dl postman dbeaver-ce
     sudo snap install intellij-idea-community --classic
     sudo snap install node --classic
-   
+
     sudo snap refresh
 }
 baixar_certificado() {
