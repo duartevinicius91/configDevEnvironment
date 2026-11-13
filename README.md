@@ -79,5 +79,6 @@ baixar_certificado() {
     # E garanta que o update também tenha sudo:
     sudo update-ca-certificates
 }
+#keytool -delete -cacerts -alias $1 
 #keytool.exe -printcert -sslserver $1 -rfc | keytool -import -noprompt -cacerts -storepass changeit -trustcacerts -alias $1
 main
